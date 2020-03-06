@@ -7,7 +7,7 @@
 Liquid utility that includes Google Translate HTML and JS code
 
 
-## [![Byte size of includes-translate][badge__master__includes_translate__source_code]][includes_translate__master__source_code] [![Open Issues][badge__issues__includes_translate]][issues__includes_translate] [![Open Pull Requests][badge__pull_requests__includes_translate]][pull_requests__includes_translate] [![Latest commits][badge__commits__includes_translate__master]][commits__includes_translate__master]
+## [![Byte size of includes-translate][badge__master__includes_translate__source_code]][includes_translate__master__source_code] [![Open Issues][badge__issues__includes_translate]][issues__includes_translate] [![Open Pull Requests][badge__pull_requests__includes_translate]][pull_requests__includes_translate] [![Latest commits][badge__commits__includes_translate__master]][commits__includes_translate__master] [![Includes Translate Demos][badge__demo__includes_translate]][demo__includes_translate]
 
 
 ------
