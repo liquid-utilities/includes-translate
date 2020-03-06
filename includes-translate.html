@@ -28,83 +28,88 @@ author: S0AndS0
   {% assign translate__callback = include.translate_callback | default: page.translate_callback | default: site[page.translate_callback] %}
   {% assign translate__auto_translate = include.auto_translate | default: page.auto_translate | default: site[page.auto_translate] | default: false %}
 
-  {% unless translate__element_id %}
-    {% assign translate__element_id = 'translate_selection' %}
-    <div id="translate_selection"></div>
-  {% endunless %}
+  {% assign translate__disable_translate = include.disable_translate | default: page.disable_translate | default: site[page.disable_translate] | default: false %}
+  {% unless translate__disable_translate %}
 
-  {% unless translate__callback %}
-    {% assign translate__callback = 'google_translate_callback' %}
-    <script type="text/javascript">
-      /**
-       * Callback for `//translate.google.com/translate_a/element.js`
-       */
-      function google_translate_callback() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: '{{ translate__page_language }}',
-            {% comment %} API calls that have yet to be implemented in Liquid
-            // autoDisplay: true,
-            // includedLanguages: 'es, he',
-            // layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            // multilanguagePage: true,
-            {% endcomment %}
-          },
-          '{{ translate__element_id }}'
-        );
-      }
-    </script>
-  {% endunless %}
+    {% unless translate__element_id %}
+      {% assign translate__element_id = 'translate_selection' %}
+      <div id="translate_selection"></div>
+    {% endunless %}
+
+    {% unless translate__callback %}
+      {% assign translate__callback = 'google_translate_callback' %}
+      <script type="text/javascript">
+        /**
+         * Callback for `//translate.google.com/translate_a/element.js`
+         */
+        function google_translate_callback() {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: '{{ translate__page_language }}',
+              {% comment %} API calls that have yet to be implemented in Liquid
+              // autoDisplay: true,
+              // includedLanguages: 'es, he',
+              // layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              // multilanguagePage: true,
+              {% endcomment %}
+            },
+            '{{ translate__element_id }}'
+          );
+        }
+      </script>
+    {% endunless %}
 
 
-  {% if translate__auto_translate %}
-    <script type="text/javascript">
-      /**
-       * Sets and triggers Google translate `onchange` callback
-       * @param {string} language - Language code to select, eg. `"en"`
-       * @returns {boolean} - `true` language was selected, `false` otherwise
-       * @example <caption>Automaticly select preferred language on page load</caption>
-       *   window.addEventListener('onload', (_event) => {
-       *    select_translation();
-       *   });
-       */
-      function select_translation(language) {
-        const preferred_language_code = (
-          language || window.navigator['userLanguage'] || window.navigator.language
-        ).split('-')[0];
+    {% if translate__auto_translate %}
+      <script type="text/javascript">
+        /**
+         * Sets and triggers Google translate `onchange` callback
+         * @param {string} language - Language code to select, eg. `"en"`
+         * @returns {boolean} - `true` language was selected, `false` otherwise
+         * @example <caption>Automaticly select preferred language on page load</caption>
+         *   window.addEventListener('onload', (_event) => {
+         *    select_translation();
+         *   });
+         */
+        function select_translation(language) {
+          const preferred_language_code = (
+            language || window.navigator['userLanguage'] || window.navigator.language
+          ).split('-')[0];
 
-        if (preferred_language_code.length <= 0) {
-          console.warn('Cannot detect browser language, or no language parameter provided');
+          if (preferred_language_code.length <= 0) {
+            console.warn('Cannot detect browser language, or no language parameter provided');
+            return false;
+          }
+
+          const translation_selector = document.getElementById(
+            '{{ translate__element_id }}'
+          ).getElementsByTagName(
+            'select'
+          )[0];
+
+          for (let i = 0; i < translation_selector.options.length; i++) {
+            if (translation_selector.options[i].value === preferred_language_code) {
+              translation_selector.options.selectedIndex = i;
+              translation_selector.dispatchEvent(new Event('change', { 'bubbles': true }));
+              return true;
+            }
+          }
+
           return false;
         }
 
-        const translation_selector = document.getElementById(
-          '{{ translate__element_id }}'
-        ).getElementsByTagName(
-          'select'
-        )[0];
 
-        for (let i = 0; i < translation_selector.options.length; i++) {
-          if (translation_selector.options[i].value === preferred_language_code) {
-            translation_selector.options.selectedIndex = i;
-            translation_selector.dispatchEvent(new Event('change', { 'bubbles': true }));
-            return true;
-          }
-        }
+        /**
+         * Callback to automaticly select preferred language when page is fully loaded
+         */
+        window.addEventListener('onload', (_event) => { select_translation(); });
+      </script>
+    {% endif %}
 
-        return false;
-      }
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb={{ translate__callback }}"
+    ></script>
 
-
-      /**
-       * Callback to automaticly select preferred language when page is fully loaded
-       */
-      window.addEventListener('onload', (_event) => { select_translation(); });
-    </script>
-  {% endif %}
-
-  <script
-    type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb={{ translate__callback }}"
-  ></script>
-{% endcapture %}{{ workspace__translate | strip }}{% assign workspace__translate = nil %}
+  {% endunless %}
+{% endcapture %}{% if workspace__translate %}{{ workspace__translate | strip }}{% assign workspace__translate = nil %}{% endif %}
