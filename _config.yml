@@ -19,8 +19,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Liquid utility that includes Google Translate HTML and JS code
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: 'https://liquid-utilities.github.io'
-twitter_username: S0_And_S0
-github_username: S0AndS0
+# twitter_username: S0_And_S0
+github_username: liquid-utilities
 
 # Build settings
 markdown: kramdown
