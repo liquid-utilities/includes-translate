@@ -225,6 +225,8 @@ ___
 
 - `auto_translate` boolean, if `true` will add JavaScript function and event listener that will automatically select preferred language if detectable; defaults to `false`
 
+- `disable_translate` boolean, if `true` will disable **all** features of `includes-translate` within page/post or entire site; defaults to `false`
+
 
 ------
 
