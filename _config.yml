@@ -22,6 +22,13 @@ url: 'https://liquid-utilities.github.io'
 # twitter_username: S0_And_S0
 github_username: liquid-utilities
 
+# Configure `liquid-utilities/includes-translate`
+page:
+  translate_id: translate_selection
+  language: en
+  translate_callback: google_translate_callback
+  auto_translate: false
+
 # Build settings
 markdown: kramdown
 theme: minima
