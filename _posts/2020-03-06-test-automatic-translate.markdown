@@ -8,6 +8,7 @@ translate_id: translate_selection
 translate_callback: google_translate_callback
 language: ja
 auto_translate: "true"
+## TO-DO: resolve issues with `auto_translate`
 ---
 
 翻訳するページコンテンツの例。

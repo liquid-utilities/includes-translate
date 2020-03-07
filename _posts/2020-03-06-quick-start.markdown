@@ -31,8 +31,8 @@ git submodule add\
 
 **Includes example, `_layouts/default.html`**
 
-
 ```HTML
+{% raw %}
 <!--
   Source: https://raw.githubusercontent.com/jekyll/minima/v2.5.0/_layouts/default.html
   License: MIT
@@ -57,6 +57,7 @@ git submodule add\
   </body>
 
 </html>
+{% endraw %}
 ```
 
 
