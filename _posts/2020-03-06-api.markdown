@@ -7,7 +7,7 @@ categories: posts
 
 
 
-`{% include %}` parameters, and `_config.yaml` or `_posts`/`_pages` Frontmatter, may accept the following customizations
+`include` parameters, and `_config.yaml` or `_posts`/`_pages` Frontmatter, may accept the following customizations
 
 
 ------
