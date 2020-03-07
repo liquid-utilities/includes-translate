@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+**Notice**, please avoid bookmarking posts or pages hosted here until this notice is removed, because site assets and URLs may move while author(s) figure out how best to organize content.
