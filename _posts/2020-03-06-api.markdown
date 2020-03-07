@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "API"
+date:   2020-03-06 12:57:35 -0800
+categories: posts
+---
+
+
+
+`{% include %}` parameters, and `_config.yaml` or `_posts`/`_pages` Frontmatter, may accept the following customizations
+
+
+------
+
+
+- [`translate_id`][heading__translate_id]
+
+- [`language`][heading__language]
+
+- [`translate_callback`][heading__translate_callback]
+
+- [`auto_translate`][heading__auto_translate]
+
+- [`disable_translate`][heading__disable_translate]
+
+
+------
+
+
+## `translate_id`
+  [heading__translate_id]: #translate_id "HTML `id` that Google Translate script should inject `option` and `select` elements into"
+
+
+- Type: string
+
+- Default: `"translate_selection"`
+
+
+HTML `id` that Google Translate script should inject `option` and `select` elements into
+
+
+___
+
+
+## `language`
+ [heading__language]: #language "Two letter language code that pages are written in"
+
+
+- Type: string
+
+- Default: `"en"`
+
+
+Two letter language code that pages are written in
+
+
+___
+
+
+## `translate_callback`
+  [heading__translate_callback]: #translate_callback "JavaScript function name that Google Translate should call when a language `option` is chosen"
+
+
+- Type: string
+
+- Default: `"google_translate_callback"`
+
+
+JavaScript function name that Google Translate should call when a language `option` is chosen
+
+
+___
+
+
+## `auto_translate`
+  [heading__auto_translate]: #auto_translate "When `true` adds JavaScript function and event listener that will automatically select preferred language if detectable"
+
+
+- Type: boolean
+
+- Default: `false`
+
+
+When `true` adds JavaScript function and event listener that will automatically select preferred language if detectable
+
+
+___
+
+
+## `disable_translate`
+  [heading__disable_translate]: #disable_translate "When `true` disables **all** features of `includes-translate` within page/post or entire site"
+
+
+- Type: boolean
+
+- Default: `false`
+
+
+When `true` disables **all** features of `includes-translate` within page/post or entire site
