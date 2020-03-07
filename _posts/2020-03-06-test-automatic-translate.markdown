@@ -7,7 +7,7 @@ categories: test translate
 translate_id: translate_selection
 translate_callback: google_translate_callback
 language: ja
-auto_translate: true
+auto_translate: "true"
 ---
 
 翻訳するページコンテンツの例。
