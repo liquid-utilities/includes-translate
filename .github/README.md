@@ -176,7 +176,9 @@ ___
 ```Bash
 git add README.md
 git add .gitmodules
-git add _layouts/modules/includes-translate
+git add _config.yaml
+git add _includes/modules/includes-translate
+git add _layouts/default.html
 
 
 ## Add any changed files too
