@@ -1,5 +1,6 @@
 {% comment %}
 ---
+vim: filetype=liquid
 version: 0.0.1
 license: AGPL-3.0
 author: S0AndS0
@@ -8,7 +9,7 @@ author: S0AndS0
 {% capture workspace__translate %}
   {% comment %}
     Includes Translate Liquid script
-    Copyright (C) 2020  S0AndS0
+    Copyright (C) 2022  S0AndS0
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published
@@ -100,7 +101,7 @@ author: S0AndS0
 
 
         /**
-         * Callback to automaticly select preferred language when page is fully loaded
+         * Callback to automatically select preferred language when page is fully loaded
          */
         window.addEventListener('onload', (_event) => { select_translation(); });
       </script>
