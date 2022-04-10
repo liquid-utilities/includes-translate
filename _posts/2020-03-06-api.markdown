@@ -39,7 +39,7 @@ categories: posts
 HTML `id` that Google Translate script should inject `option` and `select` elements into
 
 
-___
+______
 
 
 ## `language`
@@ -54,7 +54,7 @@ ___
 Two letter language code that pages are written in
 
 
-___
+______
 
 
 ## `translate_callback`
@@ -69,7 +69,7 @@ ___
 JavaScript function name that Google Translate should call when a language `option` is chosen
 
 
-___
+______
 
 
 ## `auto_translate`
@@ -84,7 +84,7 @@ ___
 When `true` adds JavaScript function and event listener that will automatically select preferred language if detectable
 
 
-___
+______
 
 
 ## `disable_translate`
