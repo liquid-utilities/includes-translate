@@ -10,7 +10,7 @@ Liquid utility that includes Google Translate HTML and JS code
 ## [![Byte size of includes-translate][badge__master__includes_translate__source_code]][includes_translate__master__source_code] [![Open Issues][badge__issues__includes_translate]][issues__includes_translate] [![Open Pull Requests][badge__pull_requests__includes_translate]][pull_requests__includes_translate] [![Latest commits][badge__commits__includes_translate__master]][commits__includes_translate__master] [![Includes Translate Demos][badge__demo__includes_translate]][demo__includes_translate]
 
 
-------
+---
 
 
 - [:arrow_up: Top of ReadMe File][heading__title]
@@ -27,7 +27,8 @@ Liquid utility that includes Google Translate HTML and JS code
 
 - [&#x2696; License][heading__license]
 
-------
+
+---
 
 
 ## Quick Start
@@ -50,7 +51,7 @@ git checkout gh-pages
 Add this project as a Git submodule...
 
 
-```
+```bash
 mkdir -vp _includes/modules
 
 
@@ -93,10 +94,10 @@ Update/upgrade submodules via
 Include the Liquid script within a Layout file...
 
 
-**`_layouts/default.html`**
+`_layouts/default.html`
 
 
-```HTML
+```html
 <!--
   Source: https://raw.githubusercontent.com/jekyll/minima/v2.5.0/_layouts/default.html
   License: MIT
@@ -130,7 +131,7 @@ Include the Liquid script within a Layout file...
 Define site defaults...
 
 
-**`_config.yaml`**
+`_config.yaml`
 
 
 ```YAML
@@ -145,10 +146,10 @@ page:
 Individual posts may overwrite site defaults...
 
 
-**`_posts/2019-08-16-hello-lifeforms.md`**
+`_posts/2019-08-16-hello-lifeforms.md`
 
 
-```YAML
+```yaml
 ---
 layout: post
 title: "Hello Lifeforms"
@@ -164,7 +165,7 @@ Ejemplo de contenido de la página que se traducirá.
 ```
 
 
-___
+______
 
 
 ### Commit and Push
@@ -173,7 +174,7 @@ ___
   "&#x1F4BE; It may be just this easy..."
 
 
-```Bash
+```bash
 git add README.md
 git add .gitmodules
 git add _config.yaml
@@ -196,7 +197,7 @@ git commit -F- <<'EOF'
 
 - `README.md`, updates installation and updating guidance
 
-- `_layouts/modules/includes-translate`, builds list of pages for a named collection
+- `_layouts/modules/includes-translate`, injects JavaScript configs for translating page via Google Translate
 EOF
 
 
@@ -207,7 +208,7 @@ git push origin gh-pages
 **:tada: Excellent :tada:** your site is now ready to begin unitizing code from this repository!
 
 
-___
+______
 
 
 ## Notes
@@ -230,16 +231,16 @@ ___
 - `disable_translate` boolean, if `true` will disable **all** features of `includes-translate` within page/post or entire site; defaults to `false`
 
 
-------
+---
 
 
 Because this project is a script that may be included, it is possible to translate select pages or posts instead of modifying site template files, eg...
 
 
-**`_posts/2020-03-05-test-automatic-translation.md`**
+`_posts/2020-03-05-test-automatic-translation.md`
 
 
-```YAML
+```yaml
 ---
 layout: post
 title: "Test Automatic Translation"
@@ -258,7 +259,7 @@ auto_translate: true
 ```
 
 
-___
+______
 
 
 ## Attribution
@@ -281,8 +282,10 @@ ___
 
 - [StackOverflow -- Adding Google Translate to a web site](https://stackoverflow.com/questions/12243818)
 
+- [Daddy Design -- How to Disable Google Translate from Translating Specific Words or Content Blocks](https://www.daddydesign.com/wordpress/how-to-disable-google-translate-from-translating-specific-words-or-content-blocks/)
 
-___
+
+______
 
 
 ## License
@@ -296,7 +299,7 @@ Legal bits of Open Source software
 
 ```
 Includes Translate documentation on how things like this could be utilized
-Copyright (C) 2020  S0AndS0
+Copyright (C) 2022  S0AndS0
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
